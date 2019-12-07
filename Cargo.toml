@@ -45,6 +45,7 @@ maintenance = { status = "actively-developed" }
 env_logger = "^0.6.2"
 rand = "^0.7"
 serde_json = "^1.0.40"
+criterion = "^0.3"
 
 [dependencies]
 bincode = "^1.1.4"
@@ -57,3 +58,6 @@ secc = "^0.0.10"
 serde = { version = "^1.0.97", features = ["derive", "rc"] }
 uuid = { version = "^0.7.4", features = ["serde", "v4"]}
 
+[[bench]]
+name = "benchmarks"
+harness = false
