@@ -372,7 +372,9 @@ impl ActorSystem {
                 match data.peek() {
                     None => {
                         // wait to be notified something is added.
-                        let _ = condvar.wait(data).unwrap();
+                        let _ = condvar
+                            .wait_timeout(data, Duration::from_millis(1))
+                            .unwrap();
                     }
                     Some(msg) => {
                         let now = Instant::now();
